@@ -585,6 +585,8 @@ def post(settings):
     if hasattr(settings, 'version'):
         print('%-12s: %s' % ('Version', settings.version))
     print('%-12s: %s' % ('Description', settings.description))
+    if hasattr(settings, 'keywords'):
+        print('%-12s: %s' % ('Keywords', settings.keywords))
     if hasattr(settings, 'op_sys'):
         print('%-12s: %s' % ('Operating System', settings.op_sys))
     if hasattr(settings, 'platform'):
@@ -627,6 +629,8 @@ def post(settings):
         params['description'] = settings.description
     if hasattr(settings, 'op_sys'):
         params['op_sys'] = settings.op_sys
+    if hasattr(settings, 'keywords'):
+        params['keywords'] = settings.keywords
     if hasattr(settings, 'platform'):
         params['platform'] = settings.platform
     if hasattr(settings, 'priority'):
@@ -653,7 +657,7 @@ the keywords given on the title (or the body if specified).
     valid_keys = ['alias', 'assigned_to', 'component', 'creator',
                   'limit', 'offset', 'op_sys', 'platform',
                   'priority', 'product', 'resolution', 'severity',
-                  'version', 'whiteboard', 'cc']
+                  'version', 'whiteboard', 'cc', 'keywords']
 
     params = {}
     d = vars(settings)

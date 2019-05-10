@@ -291,6 +291,9 @@ def make_arg_parser():
                                type=int,
                                help='Limit the number of records '
                                'returned by a search')
+    search_parser.add_argument('--keywords',
+                               action='append',
+                               help='restrict by keyword (one or more)')
     search_parser.add_argument('--offset',
                                type=int,
                                help='Set the start position for a search')
